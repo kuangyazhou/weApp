@@ -5,7 +5,12 @@ import "./app.less";
 
 class App extends Component {
   config = {
-    pages: ["pages/index/index", "pages/view/view"],
+    pages: [
+      "pages/index/index",
+      "pages/view/view",
+      "pages/component/component",
+      "pages/taroUI/index"
+    ],
     window: {
       backgroundTextStyle: "light",
       navigationBarBackgroundColor: "#fff",

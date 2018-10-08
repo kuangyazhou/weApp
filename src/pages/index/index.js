@@ -18,9 +18,17 @@ export default class Index extends Component {
   componentDidHide() {}
 
   jump = e => {
-    Taro.redirectTo({
+    Taro.navigateTo({
       url: "/pages/view/view"
     });
+  };
+
+  showList = e => {
+    Taro.navigateTo({ url: "/pages/component/component" });
+  };
+
+  showTaroUI = e => {
+    Taro.navigateTo({ url: "/pages/taroUI/index" });
   };
 
   render() {
@@ -28,6 +36,8 @@ export default class Index extends Component {
       <View className="index">
         <Text>Hello world!</Text>
         <Button onClick={this.jump}>跳转</Button>
+        <Button onClick={this.showList}>组件展示</Button>
+        <Button onClick={this.showTaroUI}>TaroUI</Button>
       </View>
     );
   }

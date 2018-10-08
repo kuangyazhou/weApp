@@ -1,5 +1,5 @@
-import { Component } from "@tarojs/taro";
-import { View, Text } from "@tarojs/Components";
+import Taro, { Component } from "@tarojs/taro";
+import { View, Text, Button } from "@tarojs/components";
 import "./view.less";
 
 export default class Testview extends Component {
@@ -16,10 +16,16 @@ export default class Testview extends Component {
 
   componentDidHide() {}
 
+  back = e => {
+    Taro.navigateBack();
+  };
+
   render() {
     return (
       <View>
-        <Text>this is the test text</Text>
+        {/* <Text>this is the test text</Text> */}
+        <Button onClick={this.back}>返回</Button>
+        {/* <Text>this is the test text1111</Text> */}
       </View>
     );
   }
