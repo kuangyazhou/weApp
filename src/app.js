@@ -1,6 +1,10 @@
 import Taro, { Component } from "@tarojs/taro";
 import Index from "./pages/index";
 
+import { Provider } from "@tarojs/redux";
+// import configStore from "./store";
+// const store = configStore();
+
 import "./app.less";
 
 class App extends Component {
@@ -19,7 +23,9 @@ class App extends Component {
     }
   };
 
-  componentDidMount() {}
+  componentDidMount() {
+    console.log(Taro.getEnv());
+  }
 
   componentDidShow() {}
 
