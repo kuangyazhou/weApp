@@ -8,7 +8,8 @@ import {
   AtModalAction,
   AtTabs,
   AtTabsPane,
-  AtTabBar
+  AtTabBar,
+  AtDrawer
 } from "taro-ui";
 
 export default class TaroUI extends Component {
@@ -18,7 +19,8 @@ export default class TaroUI extends Component {
   state = {
     isOpened: true,
     current: 0,
-    barCur: 0
+    barCur: 0,
+    show: false
   };
 
   cancel = e => {
@@ -41,6 +43,18 @@ export default class TaroUI extends Component {
       barCur: e
     });
   };
+
+  onClose = e => {
+    this.setState({
+      show: false
+    });
+  };
+  showDrawer = e => {
+    this.setState({
+      show: true
+    });
+  };
+
   test = e => {
     console.log(e + "fuck the king!!!");
   };
@@ -78,6 +92,8 @@ export default class TaroUI extends Component {
             </View>
           </AtTabsPane>
         </AtTabs>
+
+        <AtButton onClick={this.showDrawer}>显示Drawer</AtButton>
         {/* <AtModal isOpened onCancel={this.cancel} onConfirm={this.confirm}>
           <AtModalHeader>标题</AtModalHeader>
           <AtModalContent>
@@ -99,6 +115,12 @@ export default class TaroUI extends Component {
           onClick={this.barClick}
           current={this.state.barCur}
         /> */}
+        <AtDrawer
+          show={this.state.show}
+          mask
+          onClose={this.onClose}
+          items={["菜单1", "菜单2"]}
+        />
         <AtModal
           isOpened={this.state.isOpened}
           title="标题"
