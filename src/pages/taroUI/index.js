@@ -55,6 +55,11 @@ export default class TaroUI extends Component {
     });
   };
 
+  itemClick = e => {
+    console.log(e);
+    return false;
+  };
+
   test = e => {
     console.log(e + "fuck the king!!!");
   };
@@ -120,6 +125,7 @@ export default class TaroUI extends Component {
           mask
           onClose={this.onClose}
           items={["菜单1", "菜单2"]}
+          onItemClick={this.itemClick}
         />
         <AtModal
           isOpened={this.state.isOpened}
